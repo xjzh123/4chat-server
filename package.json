@@ -25,6 +25,7 @@
   "license": "WTFPL",
   "dependencies": {
     "esm": "^3.2.25",
+    "minimist": "^1.2.8",
     "pm2": "^5.2.0"
   }
 }

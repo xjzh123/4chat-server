@@ -8,6 +8,9 @@ dependencies:
   esm:
     specifier: ^3.2.25
     version: 3.2.25
+  minimist:
+    specifier: ^1.2.8
+    version: 1.2.8
   pm2:
     specifier: ^5.2.0
     version: 5.2.0
@@ -647,6 +650,10 @@ packages:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
       brace-expansion: 1.1.11
+    dev: false
+
+  /minimist@1.2.8:
+    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: false
 
   /mkdirp@1.0.4:
