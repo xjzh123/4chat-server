@@ -6,6 +6,7 @@ import {
   copySync,
   writeJSONSync,
   removeSync,
+  createFileSync,
 } from 'fs-extra';
 import { resolve } from 'path';
 
@@ -43,7 +44,8 @@ class ConfigManager {
     try {
       this.config = readJsonSync(this.configPath);
     } catch (e) {
-      return false;
+      this.config = {}
+      createFileSync(this.configPath)
     }
 
     for (const key of ['mods', 'tripSalt', 'adminTrip', 'websocketPort']) {
@@ -55,6 +57,8 @@ class ConfigManager {
     if (process.env.DYN_PORT) {
       this.config.websocketPort = process.env.DYN_PORT
     }
+
+    writeJSONSync(this.configPath, this.config)
 
     return this.config;
   }
