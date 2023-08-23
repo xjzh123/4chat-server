@@ -55,7 +55,7 @@ class ConfigManager {
     }
 
     if (process.env.DYN_PORT) {
-      this.config.websocketPort = process.env.DYN_PORT
+      this.config.websocketPort = parseInt(process.env.DYN_PORT)
     }
 
     writeJSONSync(this.configPath, this.config)

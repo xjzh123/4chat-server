@@ -1,3 +1,6 @@
+# deploy for DOM-cloud
+# Will expose websocket at your DOM-cloud website's root path, 80 port
+
 source:
   url: https://github.com/xjzh123/4chat-server
   type: clone
@@ -6,10 +9,10 @@ features:
   - ssl
 commands:
   - npm install
-  - cd server & npm install
 nginx:
   root: public_html
   passenger:
     enabled: on
+    sticky_sessions: on
     app_env: development
-    app_start_command: env tripSalt="..." mods=[] adminTrip="..." DYN_PORT=$PORT npm start
+    app_start_command: 'cd public_html && env tripSalt="\""...\"" mods=[] adminTrip="\""...\"" DYN_PORT=$PORT npm start'
