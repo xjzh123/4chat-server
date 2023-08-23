@@ -4,6 +4,9 @@ source:
 features:
   - node
   - ssl
+commands:
+  - npm install
+  - cd server & npm install
 nginx:
   root: public_html
   passenger:
