@@ -1,0 +1,12 @@
+source:
+  url: https://github.com/xjzh123/4chat-server
+  type: clone
+features:
+  - node
+  - ssl
+nginx:
+  root: public_html
+  passenger:
+    enabled: on
+    app_env: development
+    app_start_command: env tripSalt="..." mods=[] adminTrip="..." DYN_PORT=$PORT npm start

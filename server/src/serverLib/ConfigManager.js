@@ -52,6 +52,10 @@ class ConfigManager {
       }
     }
 
+    if (process.env.DYN_PORT) {
+      this.config.websocketPort = process.env.DYN_PORT
+    }
+
     return this.config;
   }
 
