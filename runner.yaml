@@ -15,4 +15,4 @@ nginx:
     enabled: on
     sticky_sessions: on
     app_env: development
-    app_start_command: 'cd public_html && env DYN_PORT=$PORT node -r esm server/main.js --tripSalt="\"...\"" --adminTrip="\"...\"" --mods=[]'
+    app_start_command: 'cd public_html && node -r esm server/main.js --tripSalt="\"...\"" --adminTrip="\"...\"" --mods=[] --websocketPort=$PORT'

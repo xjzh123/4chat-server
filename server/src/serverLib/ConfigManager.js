@@ -50,7 +50,7 @@ class ConfigManager {
     }
 
     for (const key of ['mods', 'tripSalt', 'adminTrip', 'websocketPort']) {
-      if (process.env[key] && !this.config[key]) {
+      if (process.env[key]) {
         this.config[key] = JSON.parse(process.env[key])
       }
     }
@@ -58,16 +58,12 @@ class ConfigManager {
     const args = minimist(process.argv.slice(2))
 
     for (const key of ['mods', 'tripSalt', 'adminTrip', 'websocketPort']) {
-      if (args[key] && !this.config[key]) {
+      if (args[key]) {
         this.config[key] = JSON.parse(args[key])
       }
     }
 
     writeJSONSync(this.configPath, this.config)
-
-    if (process.env.DYN_PORT) {
-      this.config.websocketPort = parseInt(process.env.DYN_PORT)
-    }
 
     console.log(this.config)
 
